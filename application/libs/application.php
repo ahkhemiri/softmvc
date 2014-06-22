@@ -3,10 +3,10 @@
 class Application
 {
     /** @var null The controller */
-    private $url_controller = null;
+    private $url_controller = 'tasks';
 
     /** @var null The method (of the above controller), often also named "action" */
-    private $url_action = null;
+    private $url_action = 'index';
 
     /** @var null Parameter one */
     private $url_parameter_1 = null;
@@ -55,11 +55,6 @@ class Application
                 // default/fallback: call the index() method of a selected controller
                 $this->url_controller->index();
             }
-        } else {
-            // invalid URL, so simply show home/index
-            require './application/controller/home.php';
-            $home = new Home();
-            $home->index();
         }
     }
 

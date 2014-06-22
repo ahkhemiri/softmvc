@@ -24,6 +24,13 @@ class Home extends Controller
         require 'application/views/_templates/footer.php';
     }
 
+
+    public function listTasks()
+    {
+        require 'application/views/_templates/header.php';
+        require 'application/views/tasks/index.php';
+        require 'application/views/_templates/footer.php';
+    }
     /**
      * PAGE: exampleone
      * This method handles what happens when you move to http://yourproject/home/exampleone
