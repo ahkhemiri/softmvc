@@ -57,7 +57,7 @@ class Tasks extends Controller
         header('location: ' . URL . 'tasks/index');
     }
 
-    public function deleteTask($task_id)
+    public function deleteTask($task_id, $view = 'default')
     {
 
         echo 'Message from Controller: You are in the Controller: Tasks, using the method deleteTask().';
@@ -66,6 +66,9 @@ class Tasks extends Controller
             $tasks_model = $this->loadModel('TasksModel');
             $tasks_model->deleteTask($task_id);
         }
+		if($view == 'default')
         header('location: ' . URL . 'tasks/index');
+		else
+		header('location: ' . URL . 'tasks/index/'.$view);
     }
 }

@@ -30,8 +30,8 @@
                     <td><?php echo $task->resource_name ?></td>
                     <td><?php if (isset($task->date) && $task->date != '0000-00-00') echo date('d/m/Y', strtotime($task->date)); ?></td>
                     <td><?php if (isset($task->advancement)) echo $task->advancement.' %'; ?></td>
-                    <td><a title="supprimer" href="<?php echo URL . 'tasks/deletetask/' . $task->id; ?>"><span class="glyphicon glyphicon-trash"></span></a></td>
-                    <td><a title="éditer" href="<?php echo URL . 'tasks/edit/' . $task->id; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                    <td><a title="supprimer" href="<?php echo URL . 'tasks/deletetask/' . $task->id . '/ressource'; ?>"><span class="glyphicon glyphicon-trash"></span></a></td>
+                    <td><a title="éditer" href="<?php echo URL . 'tasks/edit/' . $task->id . '/ressource'; ?>"><span class="glyphicon glyphicon-pencil"></span></a></td>
                 </tr>
 <?php } ?>
               </tbody>
