@@ -12,12 +12,21 @@ class TasksModel
 
     public function getAllTasks()
     {
-        $sql = "SELECT id, name, date, advancement FROM tasks";
+        $sql = "SELECT t.id, t.name, t.date, t.advancement, r.name as resource_name FROM tasks t LEFT JOIN resource r ON r.id = t.resource_id";
         $query = $this->db->prepare($sql);
         $query->execute();
    
         return $query->fetchAll();
     }
+	
+	public function getAllTasksByResource($resource_id)
+	{
+	    $sql = "SELECT t.id, t.name, t.date, t.advancement, r.name as resource_name FROM tasks t LEFT JOIN resource r ON r.id = t.resource_id WHERE t.resource_id = :resource_id";
+        $query = $this->db->prepare($sql);
+        $query->execute(array(':resource_id'=>$resource_id));
+   
+        return $query->fetchAll();
+	}
 	
     public function getTask($task_id)
     {
@@ -28,15 +37,30 @@ class TasksModel
         return $query->fetch();
     }
 
-    public function addTask($name, $date, $advancement)
+    public function addTask($data)
     {
-        $name = strip_tags($name);
-        $date = strip_tags($date);
-        $advancement = strip_tags($advancement);
+        $name = strip_tags($data['name']);
+        $date = isset($data['date']) ? strip_tags($data['date']) : date('Y-m-d');
+		$resource_id= strip_tags($data['resource_id']);
+        $advancement = isset($data['advancement'])? strip_tags($data['advancement']) : 0;
 
-        $sql = "INSERT INTO tasks (name, date, advancement) VALUES (:name, :date, :advancement)";
+        $sql = "INSERT INTO tasks (name, resource_id, date, advancement) VALUES (:name, :resource_id, :date, :advancement)";
         $query = $this->db->prepare($sql);
-        $query->execute(array(':name' => $name, ':date' => $date, ':advancement' => $advancement));
+        $query->execute(array(':name' => $name, ':date' => $date, ':resource_id' => $resource_id, ':advancement' => $advancement));
+    }
+	
+    public function updateTask($data)
+    {
+	if(!isset($data['id']))
+	return false;
+        $name = strip_tags($data['name']);
+        $date = isset($data['date']) ? strip_tags($data['date']) : date('Y-m-d');
+		$resource_id= strip_tags($data['resource_id']);
+        $advancement = isset($data['advancement'])? strip_tags($data['advancement']) : 0;
+
+        $sql = "update tasks set name=:name, resource_id=:resource_id, date=:date, advancement=:advancement where id=:id";
+        $query = $this->db->prepare($sql);
+        $query->execute(array(':name' => $name, ':date' => $date, ':resource_id' => $resource_id, ':advancement' => $advancement, ':id'=>$data['id']));
     }
 
     public function deleteTask($task_id)

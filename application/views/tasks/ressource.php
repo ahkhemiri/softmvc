@@ -1,17 +1,14 @@
 ﻿<div class="container-fluid">
-		<h2 class="sub-header">Ajouter une tache</h2>
-        <form class="form-inline" action="<?php echo URL; ?>tasks/addtask" method="POST">
-        <div class="form-group">
-            <input type="text" class="form-control" name="name" value="" placeholder="Saisir un titre de tâche" required />
-        </div>    
+        <form class="form-inline" action="" method="POST">
 		<div class="form-group">
             <select name="resource_id" class="form-control" id="resource_id">
+			<option value="">Choisir une ressource</option>
 	         <?php foreach($resources as $r) { ?>
              <option value="<?php echo $r->id ?>"><?php echo $r->name ?></option>
 	         <?php } ?>
             </select>
         </div>
-            <input type="submit" name="submit_add_task" class="btn btn-default" value="Ajouter" />
+            <input type="submit" name="filter" class="btn btn-default" value="Filtrer" />
         </form>
 <h2 class="sub-header">List des taches</h2>
 <table class="table table-striped">

@@ -16,9 +16,7 @@
     <script src="<?php echo URL; ?>public/js/bootstrap.min.js"></script>
     <!-- our JavaScript -->
     <script src="<?php echo URL; ?>public/js/application.js"></script>
-    <script src="<?php echo URL; ?>public/js/mvc.js"></script>
 
-    
 </head>
 <body>
 <!-- header -->
@@ -29,16 +27,11 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="<?php echo URL; ?>/tasks/index">List des taches</a></li>
-            <li><a href="<?php echo URL; ?>/tasks/index/ressource">Vue par ressource</a></li>
+            <li><a href="<?php echo URL; ?>tasks/index">List des taches</a></li>
+            <li><a href="<?php echo URL; ?>tasks/index/ressource">Vue par ressource</a></li>
           </ul>
         </div>
       </div>
     </div>
-<<<<<<< HEAD
     <div class="container">
-
-=======
-    
     <div class="container">
->>>>>>> FETCH_HEAD
