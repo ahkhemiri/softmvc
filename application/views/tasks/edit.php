@@ -1,4 +1,4 @@
-<?php var_dump($task);die; ?>
+<h2>Editer</h2>
 <form role="form">
   <div class="form-group">
     <label for="name">Nom</label>
@@ -17,18 +17,12 @@
   <div class="form-group">
     <label for="advancement">Avancement</label>
     <div class="input-group">
+    <div>
       <input name="advancement" type="text" class="form-control" id="advancement" placeholder="">
+    </div>
       <span class="input-group-addon">%</span> </div>
   </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox">
-      Check me out </label>
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  
+
+  <button type="submit" class="btn btn-default">Enregistrer</button>
 </form>
