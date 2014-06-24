@@ -26,7 +26,7 @@ class Tasks extends Controller
     public function addTask()
     {
 
-        echo 'Message from Controller: You are in the Controller: Songs, using the method addTask().';
+        echo 'Message from Controller: You are in the Controller: TASK , using the method addTask().';
 
         if (isset($_POST["submit_add_task"])) {
             $tasks_model = $this->loadModel('TasksModel');
@@ -39,7 +39,7 @@ class Tasks extends Controller
     public function deleteTask($task_id)
     {
 
-        echo 'Message from Controller: You are in the Controller: Songs, using the method deleteTask().';
+        echo 'Message from Controller: You are in the Controller: Tasks, using the method deleteTask().';
 
         if (isset($task_id)) {
             $tasks_model = $this->loadModel('TasksModel');

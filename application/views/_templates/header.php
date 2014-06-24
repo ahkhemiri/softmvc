@@ -8,12 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css -->
     <link href="<?php echo URL; ?>public/css/style.css" rel="stylesheet">
-    <link href="<?php echo URL; ?>public/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
+    <link href="<?php echo URL; ?>public/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
     <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
     <script src="<?php echo URL; ?>public/js/bootstrap.min.js"></script>
     <!-- our JavaScript -->
     <script src="<?php echo URL; ?>public/js/application.js"></script>
+    <script src="<?php echo URL; ?>public/js/mvc.js"></script>
+
+    
 </head>
 <body>
 <!-- header -->
